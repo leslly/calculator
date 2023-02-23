@@ -61,68 +61,96 @@ class CalculatorView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Calculator',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.grey,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 290),
-              Row(
-                children: const [
-                  AssignmentButton(buttonColor: Colors.black, buttonValue: 'C', valueColor: Colors.white),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.black, buttonValue: '%', valueColor: Colors.white),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.black, buttonValue: 'DEL', valueColor: Colors.white),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.black, buttonValue: '/', valueColor: Colors.white),
-                ],
+              Container(
+                alignment: Alignment.bottomRight,
+                height: 220,
+                child: const Text(
+                  '0',
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  AssignmentButton(buttonColor: Colors.grey, buttonValue: '7', valueColor: Colors.black),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.grey, buttonValue: '8', valueColor: Colors.black),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.grey, buttonValue: '9', valueColor: Colors.black),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.black, buttonValue: 'x', valueColor: Colors.white),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                children: const [
-                  AssignmentButton(buttonColor: Colors.grey, buttonValue: '4', valueColor: Colors.black),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.grey, buttonValue: '5', valueColor: Colors.black),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.grey, buttonValue: '6', valueColor: Colors.black),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.black, buttonValue: '-', valueColor: Colors.white),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                children: const [
-                  AssignmentButton(buttonColor: Colors.grey, buttonValue: '1', valueColor: Colors.black),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.grey, buttonValue: '2', valueColor: Colors.black),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.grey, buttonValue: '3', valueColor: Colors.black),
-                SizedBox(width: 10),
-                  AssignmentButton(buttonColor: Colors.black, buttonValue: '+', valueColor: Colors.white),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.black, buttonValue: 'C', valueColor: Colors.white)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.black, buttonValue: '%', valueColor: Colors.white)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.black, buttonValue: 'DEL', valueColor: Colors.white)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.black, buttonValue: '/', valueColor: Colors.white)),
                 ],
               ),
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                AssignmentButton(buttonColor: Colors.grey, buttonValue: '00', valueColor: Colors.black),
-                AssignmentButton(buttonColor: Colors.grey, buttonValue: '0', valueColor: Colors.black),
-                AssignmentButton(buttonColor: Colors.grey, buttonValue: '.', valueColor: Colors.black),
-                AssignmentButton(buttonColor: Colors.black),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '7', valueColor: Colors.black, a: '7',)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '8', valueColor: Colors.black, a: '8',)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '9', valueColor: Colors.black, a: '9',)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.black, buttonValue: 'x', valueColor: Colors.white, a: 'x',)),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '4', valueColor: Colors.black, a: '4',)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '5', valueColor: Colors.black, a: '5',)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '6', valueColor: Colors.black, a: '6')),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.black, buttonValue: '-', valueColor: Colors.white, a: '-',)),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '1', valueColor: Colors.black, a: '1',)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '2', valueColor: Colors.black, a: '2',)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '3', valueColor: Colors.black, a: '3',)),
+                  SizedBox(width: 10),
+                  Expanded(child: AssignmentButton(buttonColor: Colors.black, buttonValue: '+', valueColor: Colors.white, a: '+',)),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '00', valueColor: Colors.black, a: '00',)),
+                  SizedBox(width: 10),
+                Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '0', valueColor: Colors.black, a: '0',)),
+                  SizedBox(width: 10),
+                Expanded(child: AssignmentButton(buttonColor: Colors.grey, buttonValue: '.', valueColor: Colors.black, a: '.',)),
+                  SizedBox(width: 10),
+                Expanded(child: AssignmentButton(buttonColor: Colors.black)),
                 ],
               ),
             ],
