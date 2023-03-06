@@ -62,7 +62,7 @@ class CalculatorView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Calculator',
           style: TextStyle(
             color: Colors.black,
@@ -80,7 +80,7 @@ class CalculatorView extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 height: 220,
                 child: const Text(
-                  '0',
+                  '0',////textToDisplay
                   style: TextStyle(
                     fontSize: 50,
                     color: Colors.black,
